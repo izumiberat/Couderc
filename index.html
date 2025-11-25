@@ -1,560 +1,1324 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="SEE COUDERC SARL - Machinisme agricole et motoculture">
-    <meta name="author" content="">
-    <title>Page d'accueil - COUDERC-ETS</title>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUDERC-ETS - Vente de matériel agricole et motoculture</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic Reset and Global Styles */
+        /* Variables et reset */
+        :root {
+            --primary: #2c7744;
+            --primary-dark: #1e5c32;
+            --secondary: #e67e22;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+            --border: #dee2e6;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            color: var(--dark);
+            background-color: #f5f5f5;
         }
-        
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
-        
-        .row {
-            margin-left: -15px;
-            margin-right: -15px;
-        }
-        
-        .row::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        
-        .col-lg-8, .col-lg-4, .col-md-8, .col-md-4 {
-            position: relative;
-            min-height: 1px;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        
-        /* Header Styles */
-        header {
-            margin-bottom: 20px;
-        }
-        
-        .partner {
-            text-align: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .partner span {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .cover {
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        .cover-info .logo img {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-        
-        .cover-info .info span {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background-color: #f8f8f8;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        
-        .navbar-nav {
-            margin: 0;
-        }
-        
-        .navbar-nav > li > a {
-            color: #333;
-            padding: 15px 20px;
-            display: block;
-        }
-        
-        .navbar-nav > li > a:hover {
-            background-color: #e7e7e7;
-            text-decoration: none;
-        }
-        
-        .navbar-toggle {
-            border: 1px solid #ddd;
-            padding: 8px 12px;
-            background: #fff;
-            border-radius: 4px;
-        }
-        
-        .icon-bar {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background-color: #888;
-            margin: 4px 0;
-        }
-        
-        /* Main Content */
-        .content {
-            float: left;
-        }
-        
-        .col-lg-8 {
-            width: 66.66666667%;
-        }
-        
-        .col-lg-4 {
-            width: 33.33333333%;
-        }
-        
-        article {
-            background: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 28px;
-        }
-        
-        h2 {
-            color: #333;
-            margin: 20px 0 15px;
-            font-size: 22px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .text-justify {
-            text-align: justify;
-        }
-        
-        .img-responsive {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 15px;
-        }
-        
-        /* Sidebar */
-        .modules {
-            float: left;
-        }
-        
-        .Card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-        }
-        
-        .Card header {
-            background: #f8f8f8;
-            padding: 15px 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .Card header h2 {
-            margin: 0;
-            font-size: 18px;
-        }
-        
-        .Card article {
-            padding: 20px;
-        }
-        
-        .contact-module address {
-            font-style: normal;
-            margin-bottom: 15px;
-        }
-        
+
         .btn {
             display: inline-block;
-            padding: 8px 16px;
-            background: #337ab7;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
+            padding: 10px 20px;
             border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #d35400;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Header */
+        .top-bar {
+            background-color: var(--dark);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-contact span {
+            margin-right: 15px;
+        }
+
+        .top-bar-contact i {
+            margin-right: 5px;
+        }
+
+        .top-bar-links a {
+            margin-left: 15px;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
             cursor: pointer;
         }
-        
-        .btn-block {
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-action {
+            margin-left: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .header-action i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .header-action span {
+            font-size: 0.8rem;
             display: block;
-            width: 100%;
         }
-        
-        /* Footer */
-        footer {
-            background: #f8f8f8;
-            padding: 30px 0;
-            margin-top: 30px;
-            border-top: 1px solid #eee;
+
+        .cart-count {
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            position: absolute;
+            top: -5px;
+            right: -5px;
         }
-        
-        .media-object {
-            max-width: 80px;
-            height: auto;
+
+        .cart-icon {
+            position: relative;
         }
-        
-        .list {
-            list-style: none;
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
         }
-        
-        .list li {
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            color: var(--dark);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--light);
+        }
+
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 15px;
+        }
+
+        .currency-selector select {
+            background: transparent;
+            border: none;
+            color: white;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .currency-selector option {
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
             margin-bottom: 10px;
         }
-        
-        .list a {
-            color: #333;
-            text-decoration: none;
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
-        
-        .list a:hover {
-            color: #337ab7;
-            text-decoration: underline;
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
         }
-        
+
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .category-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .category-img img {
+            transform: scale(1.1);
+        }
+
+        .category-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 50px 0;
+            background-color: var(--light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-add-cart {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature i {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* Brands */
+        .brands {
+            padding: 50px 0;
+            background-color: var(--light);
+        }
+
+        .brand-logos {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .brand-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text:before {
+            content: """;
+            font-size: 3rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -15px;
+            left: -10px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 50px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-contact li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
         /* Cookie Banner */
-        .cookie {
+        .cookie-banner {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: #333;
-            color: #fff;
-            padding: 15px;
-            z-index: 1000;
+            background-color: var(--dark);
+            color: white;
+            padding: 15px 0;
+            z-index: 1001;
+            display: none;
         }
-        
-        .flex-container {
+
+        .cookie-banner .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
-        
-        /* Utility Classes */
-        .clearfix::after {
-            content: "";
-            display: table;
-            clear: both;
+
+        .cookie-text {
+            flex: 1;
+            margin-right: 20px;
         }
-        
-        .hidden-xs {
-            display: block;
-        }
-        
-        .margin-10b {
-            margin-bottom: 10px;
-        }
-        
-        .pull-left {
-            float: left;
-        }
-        
-        .pull-right {
-            float: right;
-        }
-        
+
         /* Responsive */
-        @media (max-width: 991px) {
-            .col-lg-8, .col-lg-4, .col-md-8, .col-md-4 {
-                width: 100%;
-                float: none;
+        @media (max-width: 992px) {
+            .header-main .container {
+                flex-wrap: wrap;
             }
             
-            .col-lg-push-4, .col-lg-pull-8, .col-md-push-4, .col-md-pull-8 {
-                left: auto;
-                right: auto;
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                margin: 15px 0 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        
-        @media (max-width: 767px) {
-            .hidden-xs {
-                display: none;
-            }
-            
-            .flex-container {
+
+        @media (max-width: 768px) {
+            .navbar {
                 flex-direction: column;
-                text-align: center;
             }
             
-            .flex-container .text {
+            .nav-links {
+                flex-wrap: wrap;
+            }
+            
+            .nav-links li {
+                width: 50%;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
                 margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .header-actions {
+                justify-content: space-between;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .nav-links li {
+                width: 100%;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .category-grid,
+            .product-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Cookie Consent Banner -->
-    <div id="div-use-cookie" style="display:none" class="cookie">
-        <div class="flex-container">
-            <div class="text">
-                En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies susceptibles de réaliser des statistiques de visites.
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-phone"></i> 05 61 67 88 99</span>
+                <span><i class="fas fa-envelope"></i> contact@couderc-ets.fr</span>
             </div>
-            <div>
-                <button id="use-cookie" type="submit" class="btn">Accepter</button>
+            <div class="top-bar-links">
+                <a href="#">Mon compte</a>
+                <a href="#">Aide</a>
+                <a href="#">Livraison</a>
             </div>
         </div>
     </div>
 
-    <div id="apolloContent">
-        <header class="container">
-            <div class="row partner">
-                <span>en partenariat avec</span>
+    <!-- Header -->
+    <header>
+        <div class="header-main">
+            <div class="container">
                 <div class="logo">
-                    <a href="https://www.agriaffaires.com" target="_blank" id="js-partner_link">
-                        <img src="//ads5-static.mbcore.io/bundles/mblinepasitefront/img/logo/ag/logo.svg?6.5.0.5" alt="Agriaffaires" style="height: 30px;">
-                    </a>
-                </div>
-            </div>
-            
-            <div class="row cover center">
-                <div class="cover-info">
-                    <div class="logo">
-                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/logo_1658415922.jpg" alt="COUDERC-ETS Logo">
-                    </div>
-                    <div class="info">
-                        <p>
-                            <span class="hidden-xs">SEE COUDERC SARL</span>
-                        </p>
+                    <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/logo_1658415922.jpg" alt="COUDERC-ETS">
+                    <div class="logo-text">
+                        <h1>COUDERC-ETS</h1>
+                        <p>Matériel agricole et motoculture</p>
                     </div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-
-            <div class="row">
-                <nav class="navbar" role="navigation">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav js-menu">
-                                <li>
-                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS">
-                                        Page d'accueil
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122991-toutes-nos-annonces">
-                                        Toutes nos annonces
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact">
-                                        Contact
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher un produit...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <div class="header-action">
+                        <i class="fas fa-user"></i>
+                        <span>Mon compte</span>
                     </div>
-                </nav>
-            </div>
-        </header>
-
-        <div class="container">
-            <section class="content col-lg-8 col-lg-push-4 col-md-8 col-md-push-4">
-                <article>
-                    <h1>Page d'accueil</h1>
-                    <div class="row">
-                        <div id="mce_122781" class="js-tinymce col-xs-12" data-position="A">
-                            <h2><img style="display: block; margin-left: auto; margin-right: auto;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_58719.png" width="461" height="296" alt="Main banner" /></h2>
-                            
-                            <div style="text-align: center;">
-                                <p>Indépendant dans le secteur du machinisme agricole et motoculture de plaisance depuis 1981, nous vous conseillerons afin d'optimiser au mieux vos investissements.</p>
-                                <p>Tracteur, fenaison, travail du sol, quad, équipement pour le bois ou les espaces verts.</p>
-                                <p>Nous proposons un large choix de marques qui répondent à des exigences de qualité au meilleur prix.</p>
-                                <p>Que vous soyez particulier ou professionnel nous avons un produit ou un service qui correspond à vos besoins.</p>
-                            </div>
-
-                            <div style="margin: 20px 0;">
-                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                                    <img style="float: right; margin-left: 20px;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_16146.png" width="152" height="148" alt="SIP" />
-                                    <div style="text-align: justify;">
-                                        SIP est le plus grand producteur de machines agricoles en Slovénie. Ils s'appuient sur leur expérience et leur longue tradition pour produire des machines robustes et de qualité. Leur gamme de produits de base comprend : FAUCHEUSES, FANEUSES et ANDAINEURS. En choisissant leurs machines, vous optez pour une solution robuste, simple à utiliser, éprouvée, adaptée aussi bien aux plaines qu'aux terrains montagneux.
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
-                                    <div style="text-align: center; margin-bottom: 15px;">
-                                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/0-0/23012/123005_122781_37651.png" width="213" height="84" alt="Quivogne" />
-                                    </div>
-                                    <p style="text-align: justify;">
-                                        Construction et distribution de matériel pour le travail du sol, l'environnement et les semis : outils à disques, outils à dents, rouleaux, microtracteurs, épareuses,...
-                                    </p>
-                                </div>
-                                
-                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
-                                    <div style="text-align: center; margin-bottom: 15px;">
-                                        <img src="https://www.kiotifrance.fr/images/logo-kioti-2020.png" alt="Kioti" width="220" height="215" />
-                                    </div>
-                                </div>
-                                
-                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
-                                    <div style="text-align: center; margin-bottom: 15px;">
-                                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/0-0/23012/123005_122781_31583.png" width="177" height="60" alt="Jean de Bru" />
-                                    </div>
-                                    <h4>JEAN DE BRU</h4>
-                                    <p style="text-align: justify;">
-                                        Le groupe basé à Carcassonne propose du matériel pour le bois, pour le travail du sol ou pour l'entretien des espaces vert. Qualité de très haut niveau pour ces produits fabriqués en France.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div style="margin: 30px 0;">
-                                <div style="display: flex; align-items: center;">
-                                    <img style="float: left; margin-right: 20px;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_49097.png" alt="Fuchs" width="226" height="116" />
-                                    <div>
-                                        <h4>Nous avons sélectionné pour vous la lubrification haute performance Fuchs, qui correspond à nos valeurs. Premiers groupe indépendant de lubrification, Fuchs s'engage à fournir une large gamme de produits spécifique répondant parfaitement au normes constructeur, tout en conservant un rapport coût/qualité parmi les meilleur du marché et en lutant pour la protection de l'environnement.</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="header-action">
+                        <i class="fas fa-heart"></i>
+                        <span>Favoris</span>
                     </div>
-                </article>
-            </section>
-
-            <aside class="modules col-lg-4 col-lg-pull-8 col-md-4 col-md-pull-8">
-                <section class="Card">
-                    <header>
-                        <a data-toggle="collapse" href="#module98428">
-                            <h2 class="pull-left">Contact</h2>
-                            <div class="clearfix"></div>
-                        </a>
-                    </header>
-                    <article>
-                        <div id="module98428" class="collapse contact-module">
-                            <hr>
-                            <article>
-                                <h3>SEE COUDERC SARL</h3>
-                                <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact" target="_blank" class="address-link link">
-                                    <div style="text-align: center; margin: 10px 0;">
-                                        <span>Voir sur la carte</span>
-                                    </div>
-                                    <div style="text-align: center; margin: 10px 0;">
-                                        <span>📍</span>
-                                    </div>
-                                    <div>
-                                        <address>
-                                            ZA SOULA D'EN HAUT<br>
-                                            09130<br>
-                                            <span>ARTIGAT</span> - France
-                                        </address>
-                                    </div>
-                                </a>
-                            </article>
-                            <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact" target="_blank" class="btn btn-neutral small btn-block more">Contactez-nous</a>
-                        </div>
-                    </article>
-                </section>
-            </aside>
-            
-            <div class="clearfix"></div>
+                    <div class="header-action cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Panier</span>
+                        <div class="cart-count">3</div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <nav>
+            <div class="container">
+                <div class="navbar">
+                    <ul class="nav-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li class="dropdown">
+                            <a href="#">Tracteurs <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Tracteurs compacts</a></li>
+                                <li><a href="#">Tracteurs utilitaires</a></li>
+                                <li><a href="#">Tracteurs agricoles</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Matériel de fenaison <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Faucheuses</a></li>
+                                <li><a href="#">Andaineurs</a></li>
+                                <li><a href="#">Presse à balles</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Travail du sol <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Charrues</a></li>
+                                <li><a href="#">Herses</a></li>
+                                <li><a href="#">Semoirs</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Quads et SSV</a></li>
+                        <li><a href="#">Motoculture</a></li>
+                        <li><a href="#">Pièces détachées</a></li>
+                    </ul>
+                    <div class="currency-selector">
+                        <span>Devise:</span>
+                        <select>
+                            <option>EUR €</option>
+                            <option>USD $</option>
+                            <option>GBP £</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <footer class="container">
-            <div style="width: 100%; display: flex; flex-wrap: wrap;">
-                <div style="flex: 2; min-width: 300px; padding: 15px;">
-                    <div style="display: flex; align-items: center;">
-                        <div style="margin-right: 15px;">
-                            <img src="//d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/footer_logo_1658415624.jpg" style="max-width: 80px; height: auto;">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Matériel agricole et motoculture de qualité</h2>
+            <p>Depuis 1981, nous vous conseillons pour optimiser vos investissements avec un large choix de marques au meilleur prix.</p>
+            <a href="#" class="btn btn-secondary">Découvrir nos produits</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos catégories de produits</h2>
+                <p>Découvrez notre gamme complète de matériels agricoles et de motoculture</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1591386761563-64e13b50f98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tracteurs">
+                    </div>
+                    <div class="category-info">
+                        <h3>Tracteurs</h3>
+                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Matériel de fenaison">
+                    </div>
+                    <div class="category-info">
+                        <h3>Matériel de fenaison</h3>
+                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Travail du sol">
+                    </div>
+                    <div class="category-info">
+                        <h3>Travail du sol</h3>
+                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-img">
+                        <img src="https://images.unsplash.com/photo-1621544402533-5e2d8e2a9c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quads et SSV">
+                    </div>
+                    <div class="category-info">
+                        <h3>Quads et SSV</h3>
+                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Produits en vedette</h2>
+                <p>Découvrez nos produits les plus populaires</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Promo</span>
+                        <img src="https://images.unsplash.com/photo-1591386761563-64e13b50f98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tracteur compact">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tracteurs</div>
+                        <h3 class="product-title">Tracteur compact John Deere 3039R</h3>
+                        <div class="product-price">
+                            <span class="current-price">24 500 €</span>
+                            <span class="original-price">26 900 €</span>
                         </div>
-                        <div>
-                            Site réalisé en collaboration avec Agriaffaires.
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
+                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Faucheuse conditionneuse">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Matériel de fenaison</div>
+                        <h3 class="product-title">Faucheuse conditionneuse SIP 240</h3>
+                        <div class="product-price">
+                            <span class="current-price">8 750 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
+                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Nouveau</span>
+                        <img src="https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Charrue réversible">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Travail du sol</div>
+                        <h3 class="product-title">Charrue réversible KUHN 4 socles</h3>
+                        <div class="product-price">
+                            <span class="current-price">6 200 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
+                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1621544402533-5e2d8e2a9c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quad agricole">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Quads et SSV</div>
+                        <h3 class="product-title">Quad agricole Yamaha Kodiak 700</h3>
+                        <div class="product-price">
+                            <span class="current-price">9 990 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
+                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div style="flex: 1; min-width: 200px; padding: 15px;">
-                    <ul class="list">
-                        <li><a href="#" target="_blank">CATALOGUE PRODUIT</a></li>
-                        <li><a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/151698-mentions-legales">Mentions légales</a></li>
-                        <li><a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/151705-politique-de-confidentialite">Politique de confidentialité</a></li>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="À propos de COUDERC-ETS">
+                </div>
+                <div class="about-text">
+                    <h2>Notre expertise depuis 1981</h2>
+                    <p>Indépendant dans le secteur du machinisme agricole et motoculture de plaisance depuis 1981, nous vous conseillons afin d'optimiser au mieux vos investissements.</p>
+                    <p>Tracteur, fenaison, travail du sol, quad, équipement pour le bois ou les espaces verts.</p>
+                    <p>Nous proposons un large choix de marques qui répondent à des exigences de qualité au meilleur prix.</p>
+                    <p>Que vous soyez particulier ou professionnel, nous avons un produit ou un service qui correspond à vos besoins.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <h4>Livraison rapide</h4>
+                                <p>Livraison sous 48h sur toute la France</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-tools"></i>
+                            <div>
+                                <h4>Service après-vente</h4>
+                                <p>Assistance technique et pièces détachées</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-euro-sign"></i>
+                            <div>
+                                <h4>Financement</h4>
+                                <p>Solutions de financement adaptées</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>Conseil expert</h4>
+                                <p>Notre équipe vous accompagne</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos marques partenaires</h2>
+                <p>Nous travaillons avec les meilleures marques du marché</p>
+            </div>
+            <div class="brand-logos">
+                <div class="brand-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/John_Deere_logo.svg/2560px-John_Deere_logo.svg.png" alt="John Deere" height="50">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/3c/Logo_Kuhn_2018.svg/1200px-Logo_Kuhn_2018.svg.png" alt="Kuhn" height="50">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://www.quivogne.com/wp-content/themes/quivogne/img/logo.svg" alt="Quivogne" height="40">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://www.kiotifrance.fr/images/logo-kioti-2020.png" alt="Kioti" height="50">
+                </div>
+                <div class="brand-logo">
+                    <img src="https://jeandebru.fr/wp-content/uploads/2020/09/logo-jean-de-bru.png" alt="Jean de Bru" height="40">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ils nous font confiance</h2>
+                <p>Découvrez les retours de nos clients satisfaits</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Excellent service et conseils pertinents. Le tracteur que j'ai acheté est parfait pour mon exploitation. La livraison a été rapide et l'installation professionnelle.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre Martin">
+                        </div>
+                        <div class="author-info">
+                            <h4>Pierre Martin</h4>
+                            <p>Agriculteur à Toulouse</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Je recommande COUDERC-ETS pour leur sérieux et la qualité de leur matériel. Le SAV est réactif et les techniciens compétents. Une vraie relation de confiance.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Lefebvre">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marie Lefebvre</h4>
+                            <p>Éleveuse dans le Gers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Achat d'un quad pour l'entretien de nos bois. Conseil avisé et prix très compétitif. Je reviendrai pour l'achat de matériel de fenaison l'année prochaine.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Jean Dubois">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jean Dubois</h4>
+                            <p>Propriétaire forestier</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Restez informé</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir nos offres spéciales et actualités</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>COUDERC-ETS</h3>
+                    <p>Votre spécialiste en matériel agricole et motoculture depuis 1981.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Produits</a></li>
+                        <li><a href="#">Promotions</a></li>
+                        <li><a href="#">Nouveautés</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tracteurs</a></li>
+                        <li><a href="#">Matériel de fenaison</a></li>
+                        <li><a href="#">Travail du sol</a></li>
+                        <li><a href="#">Quads et SSV</a></li>
+                        <li><a href="#">Motoculture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ZA Soula d'en Haut, 09130 Artigat, France</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>05 61 67 88 99</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@couderc-ets.fr</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Lun-Ven: 8h-12h / 14h-18h<br>Sam: 8h-12h</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </footer>
+            <div class="footer-bottom">
+                <p>&copy; 2023 COUDERC-ETS. Tous droits réservés. | <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a> | <a href="#">CGV</a></p>
+                <p>Site réalisé en collaboration avec Agriaffaires</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="container">
+            <div class="cookie-text">
+                <p>En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies susceptibles de réaliser des statistiques de visites.</p>
+            </div>
+            <div>
+                <button class="btn btn-primary" id="acceptCookies">Accepter</button>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Basic cookie functionality
+        // Gestion des cookies
         document.addEventListener('DOMContentLoaded', function() {
-            var cookieBanner = document.getElementById('div-use-cookie');
-            var acceptButton = document.getElementById('use-cookie');
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptCookies = document.getElementById('acceptCookies');
             
-            // Check if cookie consent was already given
-            if (!document.cookie.includes('cookies-ok=1')) {
+            if (!localStorage.getItem('cookiesAccepted')) {
                 cookieBanner.style.display = 'block';
             }
             
-            // Accept cookies
-            if (acceptButton) {
-                acceptButton.addEventListener('click', function() {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
-                    var expires = "; expires=" + date.toUTCString();
-                    document.cookie = 'cookies-ok=1' + expires + '; path=/';
-                    cookieBanner.style.display = 'none';
-                });
-            }
+            acceptCookies.addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.style.display = 'none';
+            });
             
-            // Simple mobile menu toggle (basic functionality)
-            var navbarToggle = document.querySelector('.navbar-toggle');
-            var navbarCollapse = document.querySelector('.navbar-collapse');
+            // Simulation d'ajout au panier
+            const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
             
-            if (navbarToggle && navbarCollapse) {
-                navbarToggle.addEventListener('click', function() {
-                    if (navbarCollapse.style.display === 'block') {
-                        navbarCollapse.style.display = 'none';
-                    } else {
-                        navbarCollapse.style.display = 'block';
-                    }
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Animation du bouton
+                    this.textContent = 'Ajouté !';
+                    this.style.backgroundColor = 'var(--success)';
+                    
+                    setTimeout(() => {
+                        this.textContent = 'Ajouter au panier';
+                        this.style.backgroundColor = '';
+                    }, 2000);
                 });
-            }
+            });
         });
     </script>
 </body>
