@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SEE COUDERC SARL - Machinisme agricole et motoculture">
+    <meta name="author" content="">
+    <title>Page d'accueil - COUDERC-ETS</title>
+    
+    <style>
+        /* Basic Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .col-lg-8, .col-lg-4, .col-md-8, .col-md-4 {
+            position: relative;
+            min-height: 1px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            margin-bottom: 20px;
+        }
+        
+        .partner {
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .partner span {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .cover {
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .cover-info .logo img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        
+        .cover-info .info span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: #f8f8f8;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .navbar-nav {
+            margin: 0;
+        }
+        
+        .navbar-nav > li > a {
+            color: #333;
+            padding: 15px 20px;
+            display: block;
+        }
+        
+        .navbar-nav > li > a:hover {
+            background-color: #e7e7e7;
+            text-decoration: none;
+        }
+        
+        .navbar-toggle {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            background: #fff;
+            border-radius: 4px;
+        }
+        
+        .icon-bar {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: #888;
+            margin: 4px 0;
+        }
+        
+        /* Main Content */
+        .content {
+            float: left;
+        }
+        
+        .col-lg-8 {
+            width: 66.66666667%;
+        }
+        
+        .col-lg-4 {
+            width: 33.33333333%;
+        }
+        
+        article {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: #333;
+            margin: 20px 0 15px;
+            font-size: 22px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-justify {
+            text-align: justify;
+        }
+        
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+        }
+        
+        /* Sidebar */
+        .modules {
+            float: left;
+        }
+        
+        .Card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .Card header {
+            background: #f8f8f8;
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .Card header h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        
+        .Card article {
+            padding: 20px;
+        }
+        
+        .contact-module address {
+            font-style: normal;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #337ab7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        /* Footer */
+        footer {
+            background: #f8f8f8;
+            padding: 30px 0;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+        }
+        
+        .media-object {
+            max-width: 80px;
+            height: auto;
+        }
+        
+        .list {
+            list-style: none;
+        }
+        
+        .list li {
+            margin-bottom: 10px;
+        }
+        
+        .list a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .list a:hover {
+            color: #337ab7;
+            text-decoration: underline;
+        }
+        
+        /* Cookie Banner */
+        .cookie {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            z-index: 1000;
+        }
+        
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Utility Classes */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .hidden-xs {
+            display: block;
+        }
+        
+        .margin-10b {
+            margin-bottom: 10px;
+        }
+        
+        .pull-left {
+            float: left;
+        }
+        
+        .pull-right {
+            float: right;
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .col-lg-8, .col-lg-4, .col-md-8, .col-md-4 {
+                width: 100%;
+                float: none;
+            }
+            
+            .col-lg-push-4, .col-lg-pull-8, .col-md-push-4, .col-md-pull-8 {
+                left: auto;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hidden-xs {
+                display: none;
+            }
+            
+            .flex-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .flex-container .text {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="div-use-cookie" style="display:none" class="cookie">
+        <div class="flex-container">
+            <div class="text">
+                En poursuivant votre navigation sur ce site, vous acceptez l'utilisation de cookies susceptibles de réaliser des statistiques de visites.
+            </div>
+            <div>
+                <button id="use-cookie" type="submit" class="btn">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="apolloContent">
+        <header class="container">
+            <div class="row partner">
+                <span>en partenariat avec</span>
+                <div class="logo">
+                    <a href="https://www.agriaffaires.com" target="_blank" id="js-partner_link">
+                        <img src="//ads5-static.mbcore.io/bundles/mblinepasitefront/img/logo/ag/logo.svg?6.5.0.5" alt="Agriaffaires" style="height: 30px;">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="row cover center">
+                <div class="cover-info">
+                    <div class="logo">
+                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/logo_1658415922.jpg" alt="COUDERC-ETS Logo">
+                    </div>
+                    <div class="info">
+                        <p>
+                            <span class="hidden-xs">SEE COUDERC SARL</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="row">
+                <nav class="navbar" role="navigation">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav js-menu">
+                                <li>
+                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS">
+                                        Page d'accueil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122991-toutes-nos-annonces">
+                                        Toutes nos annonces
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="content col-lg-8 col-lg-push-4 col-md-8 col-md-push-4">
+                <article>
+                    <h1>Page d'accueil</h1>
+                    <div class="row">
+                        <div id="mce_122781" class="js-tinymce col-xs-12" data-position="A">
+                            <h2><img style="display: block; margin-left: auto; margin-right: auto;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_58719.png" width="461" height="296" alt="Main banner" /></h2>
+                            
+                            <div style="text-align: center;">
+                                <p>Indépendant dans le secteur du machinisme agricole et motoculture de plaisance depuis 1981, nous vous conseillerons afin d'optimiser au mieux vos investissements.</p>
+                                <p>Tracteur, fenaison, travail du sol, quad, équipement pour le bois ou les espaces verts.</p>
+                                <p>Nous proposons un large choix de marques qui répondent à des exigences de qualité au meilleur prix.</p>
+                                <p>Que vous soyez particulier ou professionnel nous avons un produit ou un service qui correspond à vos besoins.</p>
+                            </div>
+
+                            <div style="margin: 20px 0;">
+                                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                                    <img style="float: right; margin-left: 20px;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_16146.png" width="152" height="148" alt="SIP" />
+                                    <div style="text-align: justify;">
+                                        SIP est le plus grand producteur de machines agricoles en Slovénie. Ils s'appuient sur leur expérience et leur longue tradition pour produire des machines robustes et de qualité. Leur gamme de produits de base comprend : FAUCHEUSES, FANEUSES et ANDAINEURS. En choisissant leurs machines, vous optez pour une solution robuste, simple à utiliser, éprouvée, adaptée aussi bien aux plaines qu'aux terrains montagneux.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
+                                    <div style="text-align: center; margin-bottom: 15px;">
+                                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/0-0/23012/123005_122781_37651.png" width="213" height="84" alt="Quivogne" />
+                                    </div>
+                                    <p style="text-align: justify;">
+                                        Construction et distribution de matériel pour le travail du sol, l'environnement et les semis : outils à disques, outils à dents, rouleaux, microtracteurs, épareuses,...
+                                    </p>
+                                </div>
+                                
+                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
+                                    <div style="text-align: center; margin-bottom: 15px;">
+                                        <img src="https://www.kiotifrance.fr/images/logo-kioti-2020.png" alt="Kioti" width="220" height="215" />
+                                    </div>
+                                </div>
+                                
+                                <div style="flex: 1; min-width: 200px; margin: 10px; padding: 15px; border: 1px solid #eee;">
+                                    <div style="text-align: center; margin-bottom: 15px;">
+                                        <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/0-0/23012/123005_122781_31583.png" width="177" height="60" alt="Jean de Bru" />
+                                    </div>
+                                    <h4>JEAN DE BRU</h4>
+                                    <p style="text-align: justify;">
+                                        Le groupe basé à Carcassonne propose du matériel pour le bois, pour le travail du sol ou pour l'entretien des espaces vert. Qualité de très haut niveau pour ces produits fabriqués en France.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div style="margin: 30px 0;">
+                                <div style="display: flex; align-items: center;">
+                                    <img style="float: left; margin-right: 20px;" src="https://ads5-imgs3.mbcore.io/apollo/0-0/23012/123005_122781_49097.png" alt="Fuchs" width="226" height="116" />
+                                    <div>
+                                        <h4>Nous avons sélectionné pour vous la lubrification haute performance Fuchs, qui correspond à nos valeurs. Premiers groupe indépendant de lubrification, Fuchs s'engage à fournir une large gamme de produits spécifique répondant parfaitement au normes constructeur, tout en conservant un rapport coût/qualité parmi les meilleur du marché et en lutant pour la protection de l'environnement.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="modules col-lg-4 col-lg-pull-8 col-md-4 col-md-pull-8">
+                <section class="Card">
+                    <header>
+                        <a data-toggle="collapse" href="#module98428">
+                            <h2 class="pull-left">Contact</h2>
+                            <div class="clearfix"></div>
+                        </a>
+                    </header>
+                    <article>
+                        <div id="module98428" class="collapse contact-module">
+                            <hr>
+                            <article>
+                                <h3>SEE COUDERC SARL</h3>
+                                <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact" target="_blank" class="address-link link">
+                                    <div style="text-align: center; margin: 10px 0;">
+                                        <span>Voir sur la carte</span>
+                                    </div>
+                                    <div style="text-align: center; margin: 10px 0;">
+                                        <span>📍</span>
+                                    </div>
+                                    <div>
+                                        <address>
+                                            ZA SOULA D'EN HAUT<br>
+                                            09130<br>
+                                            <span>ARTIGAT</span> - France
+                                        </address>
+                                    </div>
+                                </a>
+                            </article>
+                            <a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/122998-contact" target="_blank" class="btn btn-neutral small btn-block more">Contactez-nous</a>
+                        </div>
+                    </article>
+                </section>
+            </aside>
+            
+            <div class="clearfix"></div>
+        </div>
+
+        <footer class="container">
+            <div style="width: 100%; display: flex; flex-wrap: wrap;">
+                <div style="flex: 2; min-width: 300px; padding: 15px;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="margin-right: 15px;">
+                            <img src="//d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/footer_logo_1658415624.jpg" style="max-width: 80px; height: auto;">
+                        </div>
+                        <div>
+                            Site réalisé en collaboration avec Agriaffaires.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 200px; padding: 15px;">
+                    <ul class="list">
+                        <li><a href="#" target="_blank">CATALOGUE PRODUIT</a></li>
+                        <li><a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/151698-mentions-legales">Mentions légales</a></li>
+                        <li><a href="https://www.agriaffaires.pro/fr/COUDERC-ETS/151705-politique-de-confidentialite">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Basic cookie functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var cookieBanner = document.getElementById('div-use-cookie');
+            var acceptButton = document.getElementById('use-cookie');
+            
+            // Check if cookie consent was already given
+            if (!document.cookie.includes('cookies-ok=1')) {
+                cookieBanner.style.display = 'block';
+            }
+            
+            // Accept cookies
+            if (acceptButton) {
+                acceptButton.addEventListener('click', function() {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
+                    var expires = "; expires=" + date.toUTCString();
+                    document.cookie = 'cookies-ok=1' + expires + '; path=/';
+                    cookieBanner.style.display = 'none';
+                });
+            }
+            
+            // Simple mobile menu toggle (basic functionality)
+            var navbarToggle = document.querySelector('.navbar-toggle');
+            var navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggle && navbarCollapse) {
+                navbarToggle.addEventListener('click', function() {
+                    if (navbarCollapse.style.display === 'block') {
+                        navbarCollapse.style.display = 'none';
+                    } else {
+                        navbarCollapse.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
