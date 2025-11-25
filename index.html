@@ -29,6 +29,7 @@
             line-height: 1.6;
             color: var(--dark);
             background-color: #f5f5f5;
+            scroll-behavior: smooth;
         }
 
         a {
@@ -705,6 +706,16 @@
             margin-right: 20px;
         }
 
+        /* Product Sections */
+        .product-section {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .product-section:nth-child(even) {
+            background-color: var(--light);
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .header-main .container {
@@ -779,9 +790,8 @@
                 <span><i class="fas fa-envelope"></i> contact@couderc-ets.fr</span>
             </div>
             <div class="top-bar-links">
-                <a href="#">Mon compte</a>
-                <a href="#">Aide</a>
-                <a href="#">Livraison</a>
+                <a href="#contact">Contact</a>
+                <a href="#livraison">Livraison</a>
             </div>
         </div>
     </div>
@@ -791,17 +801,13 @@
         <div class="header-main">
             <div class="container">
                 <div class="logo">
-                    <img src="https://d1grzqaobpv15j.cloudfront.net/apollo/135-135/23012/logo_1658415922.jpg" alt="COUDERC-ETS">
+                    <img src="https://via.placeholder.com/150x60/2c7744/ffffff?text=COUDERC-ETS" alt="COUDERC-ETS">
                     <div class="logo-text">
                         <h1>COUDERC-ETS</h1>
                         <p>Matériel agricole et motoculture</p>
                     </div>
                 </div>
                 <div class="header-actions">
-                    <div class="header-action">
-                        <i class="fas fa-user"></i>
-                        <span>Mon compte</span>
-                    </div>
                     <div class="header-action">
                         <i class="fas fa-heart"></i>
                         <span>Favoris</span>
@@ -817,34 +823,34 @@
             <div class="container">
                 <div class="navbar">
                     <ul class="nav-links">
-                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#accueil">Accueil</a></li>
                         <li class="dropdown">
-                            <a href="#">Tracteurs <i class="fas fa-chevron-down"></i></a>
+                            <a href="#tracteurs">Tracteurs <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Tracteurs compacts</a></li>
-                                <li><a href="#">Tracteurs utilitaires</a></li>
-                                <li><a href="#">Tracteurs agricoles</a></li>
+                                <li><a href="#tracteurs-compacts">Tracteurs compacts</a></li>
+                                <li><a href="#tracteurs-utilitaires">Tracteurs utilitaires</a></li>
+                                <li><a href="#tracteurs-agricoles">Tracteurs agricoles</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#">Matériel de fenaison <i class="fas fa-chevron-down"></i></a>
+                            <a href="#fenaison">Matériel de fenaison <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Faucheuses</a></li>
-                                <li><a href="#">Andaineurs</a></li>
-                                <li><a href="#">Presse à balles</a></li>
+                                <li><a href="#faucheuses">Faucheuses</a></li>
+                                <li><a href="#andaineurs">Andaineurs</a></li>
+                                <li><a href="#presse-balles">Presse à balles</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#">Travail du sol <i class="fas fa-chevron-down"></i></a>
+                            <a href="#travail-sol">Travail du sol <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Charrues</a></li>
-                                <li><a href="#">Herses</a></li>
-                                <li><a href="#">Semoirs</a></li>
+                                <li><a href="#charrues">Charrues</a></li>
+                                <li><a href="#herses">Herses</a></li>
+                                <li><a href="#semoirs">Semoirs</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Quads et SSV</a></li>
-                        <li><a href="#">Motoculture</a></li>
-                        <li><a href="#">Pièces détachées</a></li>
+                        <li><a href="#quads-ssv">Quads et SSV</a></li>
+                        <li><a href="#motoculture">Motoculture</a></li>
+                        <li><a href="#pieces-detachees">Pièces détachées</a></li>
                     </ul>
                 </div>
             </div>
@@ -852,7 +858,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="accueil">
         <div class="container">
             <h2>Matériel agricole et motoculture de qualité</h2>
             <p>Depuis 1981, nous vous conseillons pour optimiser vos investissements avec un large choix de marques au meilleur prix.</p>
@@ -874,7 +880,7 @@
                     </div>
                     <div class="category-info">
                         <h3>Tracteurs</h3>
-                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                        <a href="#tracteurs" class="btn btn-outline">Voir les produits</a>
                     </div>
                 </div>
                 <div class="category-card">
@@ -883,7 +889,7 @@
                     </div>
                     <div class="category-info">
                         <h3>Matériel de fenaison</h3>
-                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                        <a href="#fenaison" class="btn btn-outline">Voir les produits</a>
                     </div>
                 </div>
                 <div class="category-card">
@@ -892,7 +898,7 @@
                     </div>
                     <div class="category-info">
                         <h3>Travail du sol</h3>
-                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                        <a href="#travail-sol" class="btn btn-outline">Voir les produits</a>
                     </div>
                 </div>
                 <div class="category-card">
@@ -901,19 +907,19 @@
                     </div>
                     <div class="category-info">
                         <h3>Quads et SSV</h3>
-                        <a href="#" class="btn btn-outline">Voir les produits</a>
+                        <a href="#quads-ssv" class="btn btn-outline">Voir les produits</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
+    <!-- Tracteurs Section -->
+    <section class="product-section" id="tracteurs">
         <div class="container">
             <div class="section-title">
-                <h2>Produits en vedette</h2>
-                <p>Découvrez nos produits les plus populaires disponibles en magasin</p>
+                <h2>Tracteurs</h2>
+                <p>Découvrez notre gamme de tracteurs pour tous vos besoins agricoles</p>
             </div>
             <div class="product-grid">
                 <div class="product-card">
@@ -922,7 +928,7 @@
                         <img src="https://images.unsplash.com/photo-1591386761563-64e13b50f98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tracteur compact">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">Tracteurs</div>
+                        <div class="product-category">Tracteurs compacts</div>
                         <h3 class="product-title">Tracteur compact John Deere 3039R</h3>
                         <div class="product-price">
                             <span class="current-price">24 500 €</span>
@@ -930,56 +936,277 @@
                         </div>
                         <div class="product-actions">
                             <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Faucheuse conditionneuse">
+                        <img src="https://images.unsplash.com/photo-1592494802168-4fbe91ebc60b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tracteur agricole">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">Matériel de fenaison</div>
-                        <h3 class="product-title">Faucheuse conditionneuse SIP 240</h3>
+                        <div class="product-category">Tracteurs agricoles</div>
+                        <h3 class="product-title">Tracteur agricole New Holland T7.270</h3>
                         <div class="product-price">
-                            <span class="current-price">8 750 €</span>
+                            <span class="current-price">89 500 €</span>
                         </div>
                         <div class="product-actions">
                             <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Nouveau</span>
+                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="Tracteur utilitaire">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tracteurs utilitaires</div>
+                        <h3 class="product-title">Tracteur utilitaire Kubota M5-091</h3>
+                        <div class="product-price">
+                            <span class="current-price">42 750 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1632749161487-5f7e72e6f0b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tracteur vigne">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Tracteurs spécialisés</div>
+                        <h3 class="product-title">Tracteur vigne Deutz-Fahr 4130 V</h3>
+                        <div class="product-price">
+                            <span class="current-price">38 900 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matériel de Fenaison Section -->
+    <section class="product-section" id="fenaison">
+        <div class="container">
+            <div class="section-title">
+                <h2>Matériel de Fenaison</h2>
+                <p>Équipements performants pour la récolte et le conditionnement des fourrages</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Faucheuse conditionneuse">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Faucheuses</div>
+                        <h3 class="product-title">Faucheuse conditionneuse SIP 240</h3>
+                        <div class="product-price">
+                            <span class="current-price">8 750 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Promo</span>
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Andaineur">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Andaineurs</div>
+                        <h3 class="product-title">Andaineur rotatif Kuhn GA 4521 GM</h3>
+                        <div class="product-price">
+                            <span class="current-price">6 500 €</span>
+                            <span class="original-price">7 200 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Presse à balles">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Presse à balles</div>
+                        <h3 class="product-title">Presse à balles rondes Claas Rollant 455</h3>
+                        <div class="product-price">
+                            <span class="current-price">32 800 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Nouveau</span>
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ramasseuse-presse">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Ramasseuses-presses</div>
+                        <h3 class="product-title">Ramasseuse-presse John Deere 1590</h3>
+                        <div class="product-price">
+                            <span class="current-price">58 500 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travail du Sol Section -->
+    <section class="product-section" id="travail-sol">
+        <div class="container">
+            <div class="section-title">
+                <h2>Travail du Sol</h2>
+                <p>Matériels performants pour la préparation de vos sols</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Nouveau</span>
                         <img src="https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Charrue réversible">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">Travail du sol</div>
+                        <div class="product-category">Charrues</div>
                         <h3 class="product-title">Charrue réversible KUHN 4 socles</h3>
                         <div class="product-price">
                             <span class="current-price">6 200 €</span>
                         </div>
                         <div class="product-actions">
                             <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Herse rotative">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Herses</div>
+                        <h3 class="product-title">Herse rotative Maschio Gaspardo 280</h3>
+                        <div class="product-price">
+                            <span class="current-price">8 900 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Promo</span>
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Semoir monograine">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Semoirs</div>
+                        <h3 class="product-title">Semoir monograine Amazone ED 302</h3>
+                        <div class="product-price">
+                            <span class="current-price">24 500 €</span>
+                            <span class="original-price">26 900 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cover-crop">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Cover-crops</div>
+                        <h3 class="product-title">Cover-crop Lemken Solitair 9</h3>
+                        <div class="product-price">
+                            <span class="current-price">15 750 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quads et SSV Section -->
+    <section class="product-section" id="quads-ssv">
+        <div class="container">
+            <div class="section-title">
+                <h2>Quads et SSV</h2>
+                <p>Véhicules utilitaires pour tous vos déplacements en terrain difficile</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img">
                         <img src="https://images.unsplash.com/photo-1621544402533-5e2d8e2a9c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quad agricole">
                     </div>
                     <div class="product-info">
-                        <div class="product-category">Quads et SSV</div>
+                        <div class="product-category">Quads</div>
                         <h3 class="product-title">Quad agricole Yamaha Kodiak 700</h3>
                         <div class="product-price">
                             <span class="current-price">9 990 €</span>
                         </div>
                         <div class="product-actions">
                             <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                            <button class="btn btn-outline"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Nouveau</span>
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SSV utilitaire">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">SSV</div>
+                        <h3 class="product-title">SSV utilitaire Polaris Ranger XP 1000</h3>
+                        <div class="product-price">
+                            <span class="current-price">15 500 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quad sport">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Quads</div>
+                        <h3 class="product-title">Quad sport Can-Am Outlander 650</h3>
+                        <div class="product-price">
+                            <span class="current-price">8 750 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">
+                        <span class="product-badge">Promo</span>
+                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SSV côte à côte">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">SSV</div>
+                        <h3 class="product-title">SSV côte à côte Kawasaki Mule PRO</h3>
+                        <div class="product-price">
+                            <span class="current-price">12 900 €</span>
+                            <span class="original-price">14 200 €</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
                         </div>
                     </div>
                 </div>
@@ -1174,21 +1401,21 @@
                 <div class="footer-column">
                     <h3>Liens rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Produits</a></li>
-                        <li><a href="#">Promotions</a></li>
-                        <li><a href="#">Nouveautés</a></li>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#tracteurs">Tracteurs</a></li>
+                        <li><a href="#fenaison">Fenaison</a></li>
+                        <li><a href="#travail-sol">Travail du sol</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Catégories</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Tracteurs</a></li>
-                        <li><a href="#">Matériel de fenaison</a></li>
-                        <li><a href="#">Travail du sol</a></li>
-                        <li><a href="#">Quads et SSV</a></li>
-                        <li><a href="#">Motoculture</a></li>
+                        <li><a href="#tracteurs">Tracteurs</a></li>
+                        <li><a href="#fenaison">Matériel de fenaison</a></li>
+                        <li><a href="#travail-sol">Travail du sol</a></li>
+                        <li><a href="#quads-ssv">Quads et SSV</a></li>
+                        <li><a href="#motoculture">Motoculture</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1248,7 +1475,7 @@
             });
             
             // Gestion des favoris
-            const favoriteButtons = document.querySelectorAll('.btn-outline');
+            const favoriteButtons = document.querySelectorAll('.header-action:first-child');
             
             favoriteButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -1263,6 +1490,16 @@
                         icon.classList.add('far');
                         this.style.color = '';
                     }
+                });
+            });
+            
+            // Gestion des demandes de devis
+            const inquireButtons = document.querySelectorAll('.btn-inquire');
+            
+            inquireButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                    alert(`Merci pour votre intérêt pour ${productTitle}. Notre équipe vous contactera rapidement pour établir un devis personnalisé.`);
                 });
             });
         });
