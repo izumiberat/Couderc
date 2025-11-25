@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COUDERC-ETS - Matériel Agricole et Motoculture</title>
+    <title>COUDERC-ETS - Vente de matériel agricole et motoculture</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Variables et reset */
         :root {
             --primary: #2c7744;
             --primary-dark: #1e5c32;
@@ -14,6 +15,9 @@
             --dark: #343a40;
             --gray: #6c757d;
             --border: #dee2e6;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -92,7 +96,7 @@
             color: white;
         }
 
-        /* Header Styles */
+        /* Header */
         .top-bar {
             background-color: var(--dark);
             color: white;
@@ -104,7 +108,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .top-bar-contact span {
@@ -135,7 +138,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
@@ -156,6 +158,34 @@
         .logo-text p {
             font-size: 0.9rem;
             color: var(--gray);
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
         }
 
         .header-actions {
@@ -180,6 +210,25 @@
             display: block;
         }
 
+        .cart-count {
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
         /* Navigation */
         nav {
             background-color: var(--primary);
@@ -188,12 +237,10 @@
         .navbar {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         .nav-links {
             display: flex;
-            flex-wrap: wrap;
         }
 
         .nav-links li {
@@ -239,6 +286,25 @@
 
         .dropdown-menu a:hover {
             background-color: var(--light);
+        }
+
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 15px;
+        }
+
+        .currency-selector select {
+            background: transparent;
+            border: none;
+            color: white;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        .currency-selector option {
+            color: var(--dark);
         }
 
         /* Hero Section */
@@ -329,7 +395,7 @@
             color: var(--primary);
         }
 
-        /* Products */
+        /* Featured Products */
         .featured-products {
             padding: 50px 0;
             background-color: var(--light);
@@ -417,7 +483,7 @@
             justify-content: space-between;
         }
 
-        .btn-inquire {
+        .btn-add-cart {
             flex: 1;
             margin-right: 10px;
         }
@@ -432,19 +498,16 @@
             display: flex;
             align-items: center;
             gap: 40px;
-            flex-wrap: wrap;
         }
 
         .about-img {
             flex: 1;
-            min-width: 300px;
             border-radius: 8px;
             overflow: hidden;
         }
 
         .about-text {
             flex: 1;
-            min-width: 300px;
         }
 
         .about-text h2 {
@@ -557,55 +620,43 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Section */
-        .contact {
+        /* Newsletter */
+        .newsletter {
             padding: 50px 0;
-            background-color: var(--light);
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
         }
 
-        .contact-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
+        .newsletter h2 {
             margin-bottom: 15px;
         }
 
-        .contact-detail i {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            width: 20px;
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
 
-        .contact-map {
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
             flex: 1;
-            min-width: 300px;
-            border-radius: 8px;
-            overflow: hidden;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
         }
 
         /* Footer */
@@ -697,7 +748,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .cookie-text {
@@ -709,6 +759,12 @@
         @media (max-width: 992px) {
             .header-main .container {
                 flex-wrap: wrap;
+            }
+            
+            .search-bar {
+                order: 3;
+                max-width: 100%;
+                margin: 15px 0 0;
             }
             
             .about-content {
@@ -739,6 +795,17 @@
             
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
+                margin-bottom: 10px;
             }
         }
 
@@ -797,6 +864,10 @@
                         <p>Matériel agricole et motoculture</p>
                     </div>
                 </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher un produit...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
                 <div class="header-actions">
                     <div class="header-action">
                         <i class="fas fa-user"></i>
@@ -806,9 +877,10 @@
                         <i class="fas fa-heart"></i>
                         <span>Favoris</span>
                     </div>
-                    <div class="header-action">
-                        <i class="fas fa-store"></i>
-                        <span>Boutique</span>
+                    <div class="header-action cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Panier</span>
+                        <div class="cart-count">3</div>
                     </div>
                 </div>
             </div>
@@ -846,6 +918,14 @@
                         <li><a href="#">Motoculture</a></li>
                         <li><a href="#">Pièces détachées</a></li>
                     </ul>
+                    <div class="currency-selector">
+                        <span>Devise:</span>
+                        <select>
+                            <option>EUR €</option>
+                            <option>USD $</option>
+                            <option>GBP £</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -856,7 +936,7 @@
         <div class="container">
             <h2>Matériel agricole et motoculture de qualité</h2>
             <p>Depuis 1981, nous vous conseillons pour optimiser vos investissements avec un large choix de marques au meilleur prix.</p>
-            <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+            <a href="#" class="btn btn-secondary">Découvrir nos produits</a>
         </div>
     </section>
 
@@ -913,7 +993,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Produits en vedette</h2>
-                <p>Découvrez nos produits les plus populaires disponibles en magasin</p>
+                <p>Découvrez nos produits les plus populaires</p>
             </div>
             <div class="product-grid">
                 <div class="product-card">
@@ -929,7 +1009,7 @@
                             <span class="original-price">26 900 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
                             <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
@@ -945,7 +1025,7 @@
                             <span class="current-price">8 750 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
                             <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
@@ -962,7 +1042,7 @@
                             <span class="current-price">6 200 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
                             <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
@@ -978,7 +1058,7 @@
                             <span class="current-price">9 990 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <button class="btn btn-primary btn-add-cart">Ajouter au panier</button>
                             <button class="btn btn-outline"><i class="far fa-heart"></i></button>
                         </div>
                     </div>
@@ -1117,43 +1197,15 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Newsletter -->
+    <section class="newsletter">
         <div class="container">
-            <div class="section-title">
-                <h2>Nous contacter</h2>
-                <p>Venez nous rencontrer en magasin pour découvrir nos produits</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>COUDERC-ETS</h2>
-                    <p>N'hésitez pas à nous contacter pour toute demande d'information ou pour prendre rendez-vous en magasin.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>ZA Soula d'en Haut, 09130 Artigat, France</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-phone"></i>
-                            <span>05 61 67 88 99</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <span>contact@couderc-ets.fr</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-clock"></i>
-                            <span>Lun-Ven: 8h-12h / 14h-18h - Sam: 8h-12h</span>
-                        </div>
-                    </div>
-                    
-                    <a href="tel:0561678899" class="btn btn-primary">Appeler maintenant</a>
-                </div>
-                <div class="contact-map">
-                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="Localisation COUDERC-ETS" style="width:100%; height:300px; object-fit:cover;">
-                </div>
-            </div>
+            <h2>Restez informé</h2>
+            <p>Abonnez-vous à notre newsletter pour recevoir nos offres spéciales et actualités</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'abonner</button>
+            </form>
         </div>
     </section>
 
@@ -1178,7 +1230,7 @@
                         <li><a href="#">Produits</a></li>
                         <li><a href="#">Promotions</a></li>
                         <li><a href="#">Nouveautés</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1247,22 +1299,24 @@
                 cookieBanner.style.display = 'none';
             });
             
-            // Gestion des favoris
-            const favoriteButtons = document.querySelectorAll('.btn-outline');
+            // Simulation d'ajout au panier
+            const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 3;
             
-            favoriteButtons.forEach(button => {
+            addToCartButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    const icon = this.querySelector('i');
+                    count++;
+                    cartCount.textContent = count;
                     
-                    if (icon.classList.contains('far')) {
-                        icon.classList.remove('far');
-                        icon.classList.add('fas');
-                        this.style.color = 'var(--secondary)';
-                    } else {
-                        icon.classList.remove('fas');
-                        icon.classList.add('far');
-                        this.style.color = '';
-                    }
+                    // Animation du bouton
+                    this.textContent = 'Ajouté !';
+                    this.style.backgroundColor = 'var(--success)';
+                    
+                    setTimeout(() => {
+                        this.textContent = 'Ajouter au panier';
+                        this.style.backgroundColor = '';
+                    }, 2000);
                 });
             });
         });
