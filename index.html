@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2c7744;
-            --primary-dark: #1e5c32;
-            --secondary: #e67e22;
+            --primary: #E62129;
+            --primary-dark: #c41a21;
+            --secondary: #333333;
             --light: #f8f9fa;
             --dark: #343a40;
             --gray: #6c757d;
@@ -79,7 +79,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: #d35400;
+            background-color: #222;
         }
 
         .btn-outline {
@@ -307,6 +307,10 @@
         .category-img {
             height: 180px;
             overflow: hidden;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .category-img img {
@@ -370,6 +374,10 @@
             height: 200px;
             overflow: hidden;
             position: relative;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .product-img img {
@@ -418,7 +426,7 @@
             justify-content: space-between;
         }
 
-        .btn-inquire {
+        .btn-contact {
             flex: 1;
             margin-right: 10px;
         }
@@ -626,7 +634,7 @@
         .footer-column h3 {
             font-size: 1.2rem;
             margin-bottom: 20px;
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .footer-links li {
@@ -649,7 +657,7 @@
 
         .footer-contact i {
             margin-right: 10px;
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .social-links {
@@ -670,7 +678,7 @@
         }
 
         .social-links a:hover {
-            background-color: var(--secondary);
+            background-color: var(--primary);
         }
 
         .footer-bottom {
@@ -679,6 +687,16 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #adb5bd;
             font-size: 0.9rem;
+        }
+
+        /* Product Sections */
+        .product-section {
+            padding: 50px 0;
+            background-color: white;
+        }
+
+        .product-section:nth-child(even) {
+            background-color: var(--light);
         }
 
         /* Cookie Banner */
@@ -704,16 +722,6 @@
         .cookie-text {
             flex: 1;
             margin-right: 20px;
-        }
-
-        /* Product Sections */
-        .product-section {
-            padding: 50px 0;
-            background-color: white;
-        }
-
-        .product-section:nth-child(even) {
-            background-color: var(--light);
         }
 
         /* Responsive */
@@ -801,17 +809,13 @@
         <div class="header-main">
             <div class="container">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/150x60/2c7744/ffffff?text=COUDERC-ETS" alt="COUDERC-ETS">
+                    <img src="https://via.placeholder.com/150x60/E62129/ffffff?text=COUDERC-ETS" alt="COUDERC-ETS">
                     <div class="logo-text">
                         <h1>COUDERC-ETS</h1>
                         <p>Matériel agricole et motoculture</p>
                     </div>
                 </div>
                 <div class="header-actions">
-                    <div class="header-action">
-                        <i class="fas fa-heart"></i>
-                        <span>Favoris</span>
-                    </div>
                     <div class="header-action">
                         <i class="fas fa-store"></i>
                         <span>Boutique</span>
@@ -876,7 +880,9 @@
             <div class="category-grid">
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1591386761563-64e13b50f98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tracteurs">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-tractor" style="font-size: 3rem;"></i>
+                        </div>
                     </div>
                     <div class="category-info">
                         <h3>Tracteurs</h3>
@@ -885,7 +891,9 @@
                 </div>
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Matériel de fenaison">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-wind" style="font-size: 3rem;"></i>
+                        </div>
                     </div>
                     <div class="category-info">
                         <h3>Matériel de fenaison</h3>
@@ -894,7 +902,9 @@
                 </div>
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Travail du sol">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-seedling" style="font-size: 3rem;"></i>
+                        </div>
                     </div>
                     <div class="category-info">
                         <h3>Travail du sol</h3>
@@ -903,7 +913,9 @@
                 </div>
                 <div class="category-card">
                     <div class="category-img">
-                        <img src="https://images.unsplash.com/photo-1621544402533-5e2d8e2a9c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quads et SSV">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-motorcycle" style="font-size: 3rem;"></i>
+                        </div>
                     </div>
                     <div class="category-info">
                         <h3>Quads et SSV</h3>
@@ -925,7 +937,9 @@
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Promo</span>
-                        <img src="https://images.unsplash.com/photo-1591386761563-64e13b50f98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Tracteur compact">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-tractor" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Tracteurs compacts</div>
@@ -935,13 +949,15 @@
                             <span class="original-price">26 900 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1592494802168-4fbe91ebc60b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tracteur agricole">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-tractor" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Tracteurs agricoles</div>
@@ -950,14 +966,16 @@
                             <span class="current-price">89 500 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Nouveau</span>
-                        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="Tracteur utilitaire">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-tractor" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Tracteurs utilitaires</div>
@@ -966,13 +984,15 @@
                             <span class="current-price">42 750 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1632749161487-5f7e72e6f0b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Tracteur vigne">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-tractor" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Tracteurs spécialisés</div>
@@ -981,7 +1001,7 @@
                             <span class="current-price">38 900 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
@@ -999,7 +1019,9 @@
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1573588028698-9d8ea5936cfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Faucheuse conditionneuse">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-wind" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Faucheuses</div>
@@ -1008,14 +1030,16 @@
                             <span class="current-price">8 750 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Promo</span>
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Andaineur">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-wind" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Andaineurs</div>
@@ -1025,13 +1049,15 @@
                             <span class="original-price">7 200 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Presse à balles">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-wind" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Presse à balles</div>
@@ -1040,14 +1066,16 @@
                             <span class="current-price">32 800 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Nouveau</span>
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Ramasseuse-presse">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-wind" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Ramasseuses-presses</div>
@@ -1056,7 +1084,7 @@
                             <span class="current-price">58 500 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
@@ -1075,7 +1103,9 @@
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Nouveau</span>
-                        <img src="https://images.unsplash.com/photo-1626761191818-8d52b77fbe1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Charrue réversible">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-seedling" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Charrues</div>
@@ -1084,13 +1114,15 @@
                             <span class="current-price">6 200 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Herse rotative">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-seedling" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Herses</div>
@@ -1099,14 +1131,16 @@
                             <span class="current-price">8 900 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
                         <span class="product-badge">Promo</span>
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Semoir monograine">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-seedling" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Semoirs</div>
@@ -1116,13 +1150,15 @@
                             <span class="original-price">26 900 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Cover-crop">
+                        <div style="width: 100%; height: 100%; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                            <i class="fas fa-seedling" style="font-size: 4rem;"></i>
+                        </div>
                     </div>
                     <div class="product-info">
                         <div class="product-category">Cover-crops</div>
@@ -1131,82 +1167,7 @@
                             <span class="current-price">15 750 €</span>
                         </div>
                         <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quads et SSV Section -->
-    <section class="product-section" id="quads-ssv">
-        <div class="container">
-            <div class="section-title">
-                <h2>Quads et SSV</h2>
-                <p>Véhicules utilitaires pour tous vos déplacements en terrain difficile</p>
-            </div>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1621544402533-5e2d8e2a9c1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quad agricole">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Quads</div>
-                        <h3 class="product-title">Quad agricole Yamaha Kodiak 700</h3>
-                        <div class="product-price">
-                            <span class="current-price">9 990 €</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <span class="product-badge">Nouveau</span>
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SSV utilitaire">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">SSV</div>
-                        <h3 class="product-title">SSV utilitaire Polaris Ranger XP 1000</h3>
-                        <div class="product-price">
-                            <span class="current-price">15 500 €</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Quad sport">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Quads</div>
-                        <h3 class="product-title">Quad sport Can-Am Outlander 650</h3>
-                        <div class="product-price">
-                            <span class="current-price">8 750 €</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img">
-                        <span class="product-badge">Promo</span>
-                        <img src="https://images.unsplash.com/photo-1581093458791-8a0b5b5b5b5b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="SSV côte à côte">
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">SSV</div>
-                        <h3 class="product-title">SSV côte à côte Kawasaki Mule PRO</h3>
-                        <div class="product-price">
-                            <span class="current-price">12 900 €</span>
-                            <span class="original-price">14 200 €</span>
-                        </div>
-                        <div class="product-actions">
-                            <button class="btn btn-primary btn-inquire">Demander un devis</button>
+                            <a href="#contact" class="btn btn-primary btn-contact">Nous contacter</a>
                         </div>
                     </div>
                 </div>
@@ -1219,7 +1180,9 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="À propos de COUDERC-ETS">
+                    <div style="width: 100%; height: 400px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <i class="fas fa-store" style="font-size: 6rem;"></i>
+                    </div>
                 </div>
                 <div class="about-text">
                     <h2>Notre expertise depuis 1981</h2>
@@ -1272,72 +1235,28 @@
             </div>
             <div class="brand-logos">
                 <div class="brand-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/John_Deere_logo.svg/2560px-John_Deere_logo.svg.png" alt="John Deere" height="50">
+                    <div style="width: 150px; height: 60px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        JOHN DEERE
+                    </div>
                 </div>
                 <div class="brand-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/3/3c/Logo_Kuhn_2018.svg/1200px-Logo_Kuhn_2018.svg.png" alt="Kuhn" height="50">
+                    <div style="width: 150px; height: 60px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        KUHN
+                    </div>
                 </div>
                 <div class="brand-logo">
-                    <img src="https://www.quivogne.com/wp-content/themes/quivogne/img/logo.svg" alt="Quivogne" height="40">
+                    <div style="width: 150px; height: 60px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        QUIVOGNE
+                    </div>
                 </div>
                 <div class="brand-logo">
-                    <img src="https://www.kiotifrance.fr/images/logo-kioti-2020.png" alt="Kioti" height="50">
+                    <div style="width: 150px; height: 60px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        KIOTI
+                    </div>
                 </div>
                 <div class="brand-logo">
-                    <img src="https://jeandebru.fr/wp-content/uploads/2020/09/logo-jean-de-bru.png" alt="Jean de Bru" height="40">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ils nous font confiance</h2>
-                <p>Découvrez les retours de nos clients satisfaits</p>
-            </div>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Excellent service et conseils pertinents. Le tracteur que j'ai acheté est parfait pour mon exploitation. La livraison a été rapide et l'installation professionnelle.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre Martin">
-                        </div>
-                        <div class="author-info">
-                            <h4>Pierre Martin</h4>
-                            <p>Agriculteur à Toulouse</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Je recommande COUDERC-ETS pour leur sérieux et la qualité de leur matériel. Le SAV est réactif et les techniciens compétents. Une vraie relation de confiance.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Marie Lefebvre">
-                        </div>
-                        <div class="author-info">
-                            <h4>Marie Lefebvre</h4>
-                            <p>Éleveuse dans le Gers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Achat d'un quad pour l'entretien de nos bois. Conseil avisé et prix très compétitif. Je reviendrai pour l'achat de matériel de fenaison l'année prochaine.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Jean Dubois">
-                        </div>
-                        <div class="author-info">
-                            <h4>Jean Dubois</h4>
-                            <p>Propriétaire forestier</p>
-                        </div>
+                    <div style="width: 150px; height: 60px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        JEAN DE BRU
                     </div>
                 </div>
             </div>
@@ -1378,7 +1297,9 @@
                     <a href="tel:0561678899" class="btn btn-primary">Appeler maintenant</a>
                 </div>
                 <div class="contact-map">
-                    <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1173&q=80" alt="Localisation COUDERC-ETS" style="width:100%; height:300px; object-fit:cover;">
+                    <div style="width: 100%; height: 300px; background-color: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999;">
+                        <i class="fas fa-map" style="font-size: 3rem;"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1472,35 +1393,6 @@
             acceptCookies.addEventListener('click', function() {
                 localStorage.setItem('cookiesAccepted', 'true');
                 cookieBanner.style.display = 'none';
-            });
-            
-            // Gestion des favoris
-            const favoriteButtons = document.querySelectorAll('.header-action:first-child');
-            
-            favoriteButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const icon = this.querySelector('i');
-                    
-                    if (icon.classList.contains('far')) {
-                        icon.classList.remove('far');
-                        icon.classList.add('fas');
-                        this.style.color = 'var(--secondary)';
-                    } else {
-                        icon.classList.remove('fas');
-                        icon.classList.add('far');
-                        this.style.color = '';
-                    }
-                });
-            });
-            
-            // Gestion des demandes de devis
-            const inquireButtons = document.querySelectorAll('.btn-inquire');
-            
-            inquireButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
-                    alert(`Merci pour votre intérêt pour ${productTitle}. Notre équipe vous contactera rapidement pour établir un devis personnalisé.`);
-                });
             });
         });
     </script>
